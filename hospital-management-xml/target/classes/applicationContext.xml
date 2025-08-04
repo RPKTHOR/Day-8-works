@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Patient Bean -->
+    <bean id="patient" class="com.example.hospital.Patient">
+        <property name="id" value="101"/>
+        <property name="name" value="Ravi Kumar"/>
+    </bean>
+
+    <!-- Appointment Bean -->
+    <bean id="appointment" class="com.example.hospital.Appointment">
+        <property name="appointmentId" value="201"/>
+        <property name="doctorName" value="Dr. Mehta"/>
+    </bean>
+
+    <!-- Billing Bean -->
+    <bean id="billing" class="com.example.hospital.Billing">
+        <property name="billId" value="301"/>
+        <property name="amount" value="5000.0"/>
+    </bean>
+
+    <!-- Hospital Service Bean -->
+    <bean id="hospitalService" class="com.example.hospital.HospitalService">
+        <property name="patient" ref="patient"/>
+        <property name="appointment" ref="appointment"/>
+        <property name="billing" ref="billing"/>
+    </bean>
+</beans>
